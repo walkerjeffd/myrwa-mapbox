@@ -9,7 +9,7 @@ convert() {
   echo Converting $name...
 
   rm -f ./geojson/$name.geojson
-  ogr2ogr -f GeoJSON ./geojson/$name.geojson ~/Dropbox/Work/mystic/gis/$name.shp
+  ogr2ogr -f GeoJSON ./geojson/$name.geojson -t_srs EPSG:4326 ~/Dropbox/Work/mystic/gis/$name.shp
 }
 
 for name in $names; do
