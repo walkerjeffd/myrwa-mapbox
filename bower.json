@@ -1,0 +1,23 @@
+{
+  "name": "mapbox",
+  "version": "0.0.0",
+  "authors": [
+    "Jeff Walker <walker.jeff.d@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mapbox.js": "~2.2.3",
+    "d3": "~3.5.6"
+  }
+}

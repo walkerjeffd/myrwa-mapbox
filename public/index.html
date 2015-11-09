@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MyRWA | Mapbox - 1</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link href='./libs/mapbox.js/mapbox.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src='./libs/mapbox.js/mapbox.js'></script>
+<script src='./libs/d3/d3.js'></script>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoid2Fsa2VyamVmZmQiLCJhIjoiTjgzUzU1WSJ9.HoqrxfD0UWVBmSnErIcysA';
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([42.45, -71.1], 12);
+
+
+d3.json('/data/watershed.geojson', function (err, data) {
+  L.geoJson(data, {}).addTo(map);
+});
+
+</script>
+</body>
+</html>
