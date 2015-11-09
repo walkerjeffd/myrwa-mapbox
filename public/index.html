@@ -19,13 +19,20 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1Ijoid2Fsa2VyamVmZmQiLCJhIjoiTjgzUzU1WSJ9.HoqrxfD0UWVBmSnErIcysA';
-var map = L.mapbox.map('map', 'mapbox.streets')
+var map = L.mapbox.map('map', 'mapbox.run-bike-hike')
     .setView([42.45, -71.1], 12);
 
-
 d3.json('/data/watershed.geojson', function (err, data) {
-  L.geoJson(data, {}).addTo(map);
-});
+  window.geoJson = L.geoJson(data, {
+    style: function (f) {
+      return {
+        "fillColor": "steelblue",
+        "fillOpacity": 0.2,
+        "color": "olive"
+      };
+    }
+  }).addTo(map);
+})
 
 </script>
 </body>
